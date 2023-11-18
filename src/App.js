@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
+import { useUserData } from './context/UserContext';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [userDetails] = useUserData();
+  const loggedIn = userDetails?.id ? true : false;
+
+  useEffect(() => {
+    if (location.pathname === '/' && !loggedIn) {
+      navigate('/login');
+    } else if (loggedIn) {
+      navigate('/admin-dashboard');
+    }
+  }, [loggedIn, location.pathname, navigate]);
 }
 
 export default App;
