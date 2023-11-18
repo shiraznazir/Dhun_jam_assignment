@@ -9,13 +9,16 @@ import {
     {
       path: "/",
       element: <App />,
+      children: [
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/admin-dashboard",
+          element: <AdminDashboard />,
+        },
+      ]
     },
-    {
-      path: "/login",
-      element: <Login />,
-    },
-    {
-      path: "/admin-dashboard",
-      element: <AdminDashboard />,
-    },
+   
   ]);
