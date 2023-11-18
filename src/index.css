@@ -26,10 +26,17 @@ body {
 .heading {
   font-size: 32px;
   font-weight: 500;
+  @media (max-width: 900px) {
+    font-size: 16px;
+    font-weight: 400;
+  }
 }
 
 .width {
   width: 600px;
+  @media (max-width: 900px) {
+    width: 80vw;
+  }
 }
 
 input:-webkit-autofill,
@@ -61,6 +68,9 @@ input:focus {
 .text {
   font-size: 16px;
   cursor: pointer;
+  @media (max-width: 900px) {
+    font-size: 8px;
+  }
 }
 
 .btn {
@@ -74,6 +84,9 @@ input:focus {
   border-radius: 10px;
   font-size: 16px;
   justify-content: center;
+  @media (max-width: 900px) {
+    width: 82vw;
+  }
 }
 
 .btn:focus {
@@ -114,6 +127,9 @@ input:focus {
   grid-template-columns: auto auto;
   row-gap: 0;
   column-gap: 40px;
+  @media (max-width: 900px) {
+    width: 80vw;
+  }
 }
 
 .radio-btn-box {
@@ -186,11 +202,13 @@ input:focus {
   padding-left: 5px;
 }
 
-.chart-container{
-  position: relative;
+.chart-container {
+  @media (max-width: 900px) {
+    width: 80vw;
+  }
 }
 
-.rupee{
+.rupee {
   position: absolute;
   top: 0;
   left: 0;
